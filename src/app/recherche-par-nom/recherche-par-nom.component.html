@@ -1,0 +1,34 @@
+<div class="container">
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2 ">
+            <label>Nom Serie</label>
+            <input class="form-control" #searchTerm (keyup)="onKeyUp(searchTerm.value)">
+            </div>
+
+    </form>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Date
+                            Diffusion</th>
+                        <th>Langue</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let serie of series">
+                    <tr>
+                        <td>{{serie.idSerie}}</td>
+                        <td>{{serie.nomSerie}}</td>
+                        <td>{{serie.dateDiffusion | date:'dd/MM/yyyy'}}</td>
+                        <td>{{serie.langue}}</td>
+                        <td>{{serie.type?.nomType}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

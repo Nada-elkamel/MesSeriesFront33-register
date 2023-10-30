@@ -1,0 +1,60 @@
+<!-- <div class="container mt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <div class="alert alert-danger" *ngIf="err==1">
+                <strong>login ou mot de passe erronés..</strong>
+                </div>                
+            <form>
+                <div class="form-group">
+                    <label>Nom Utilisateur :</label>
+                    <input type="text" name="username" class="form-control" [(ngModel)]="user.username">
+                </div>
+                <div class="form-group">
+                    <label>Mot de passe :</label>
+                    <input type="password" name="password" [(ngModel)]="user.password" class="form-control">
+                </div>
+                <div class="row justify-content-md-center">
+                    <button type="button" (click)="onLoggedin()" class="btn btn-success">Connexion</button>
+                </div>
+                <div class="row justify-content-md-center">
+                    <a class="small text-muted" [routerLink]="['/register']">Vous n'avez pas encore de compte ? Inscrivez-vous</a>
+                </div>  
+            </form>
+        </div>
+    </div>
+</div> -->
+
+  <section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Login to your account</h2>
+
+              <form>
+
+                <div class="form-outline mb-4">
+                  <input type="text" name="username" [(ngModel)]="user.username" class="form-control form-control-lg" placeholder="Username"/>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="password" name="password" [(ngModel)]="user.password" class="form-control form-control-lg" placeholder="Password"/>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="button"
+                    class="btn btn-success btn-block btn-lg  text-body" (click)="onLoggedin()">Login</button>
+                </div>
+                <p class="text-center text-muted mt-5 mb-0">You don't have an account? <a href="#!"
+                    class="fw-bold text-body" [routerLink]="['/register']"><u>Sign up here</u></a></p>
+                
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

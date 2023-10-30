@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom</th>  <th>Date Diffusion</th> <th>Langue</th><th>Type</th><th>Image</th></tr>
+    <tbody *ngFor="let serie of series">
+        <tr>
+            <td>{{serie.idSerie}}</td>
+            <td>{{serie.nomSerie}}</td>
+            <td>{{serie.dateDiffusion | date:'dd/MM/yyyy'}}</td>
+            <td>{{serie.langue}}</td>
+            <td>{{serie.type?.nomType}}</td>
+            <td><img class="card-img-top img-responsive"
+                src = "{{serie.imageStr}}"
+                style = "height :50px;width:100px">
+            </td>
+            <td><a *ngIf="authService.isAdmin()" class="btn btn-success"[routerLink]="['/updateSerie',serie.idSerie]">Modifier</a></td>
+            <td><a *ngIf="authService.isAdmin()" class="btn btn-danger"(click)="supprimerSerie(serie)">Supprimer</a></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+            
+   
